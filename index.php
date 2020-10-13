@@ -3,7 +3,7 @@ if (isset($_SERVER['CONTENT_TYPE']) && $_SERVER['CONTENT_TYPE'] == 'application/
 {
         $request = file_get_contents("php://input");
         header("Content-Type: application/dns-message");
-        $s = fsockopen("udp://127.0.0.1", 53, $errno, $errstr);
+        $s = fsockopen("udp://192.168.1.5", 53, $errno, $errstr);
         if ($s)
         {
                 fwrite($s, $request);
